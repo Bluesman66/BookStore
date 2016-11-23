@@ -43,7 +43,16 @@ namespace BookStore.Controllers
 		{
 			double s = a * h / 2;
 			return "<h2>Площадь треугольника с основанием " + a +
-					" и высотой " + h + " равна " + s + "</h2>";
+				   " и высотой " + h + " равна " + s + "</h2>";
+		}
+
+		public string Square2()
+		{
+			int a = Int32.Parse(Request.Params["a"]);
+			int h = Int32.Parse(Request.Params["h"]);
+			double s = a * h / 2;
+			return "<h2>Площадь треугольника с основанием " + a + 
+				   " и высотой " + h + " равна " + s + "</h2>";
 		}
 	}
 }
