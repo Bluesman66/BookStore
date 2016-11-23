@@ -38,5 +38,12 @@ namespace BookStore.Controllers
 			db.SaveChanges();
 			return "Спасибо," + purchase.Person + ", за покупку!";
 		}
+
+		public string Square(int a = 10, int h = 3)
+		{
+			double s = a * h / 2;
+			return "<h2>Площадь треугольника с основанием " + a +
+					" и высотой " + h + " равна " + s + "</h2>";
+		}
 	}
 }
