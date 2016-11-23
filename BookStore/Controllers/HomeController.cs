@@ -1,8 +1,7 @@
 ﻿using BookStore.Models;
+using BookStore.Util;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace BookStore.Controllers
@@ -53,6 +52,17 @@ namespace BookStore.Controllers
 			double s = a * h / 2;
 			return "<h2>Площадь треугольника с основанием " + a + 
 				   " и высотой " + h + " равна " + s + "</h2>";
+		}
+
+		public ActionResult GetHtml()
+		{
+			return new HtmlResult("<h2>Привет мир!</h2>");
+		}
+
+		public ActionResult GetImage()
+		{
+			string path = "../Images/autumn.jpg";
+			return new ImageResult(path);
 		}
 	}
 }
