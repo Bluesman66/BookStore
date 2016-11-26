@@ -17,6 +17,7 @@ namespace BookStore.Controllers
 			IEnumerable<Book> books = db.Books;
 			// передаем все объекты в динамическое свойство Books в ViewBag
 			ViewBag.Books = books;
+			ViewBag.Message = "Это вызов частичного представления из обычного.";
 			// возвращаем представление
 			return View();
 		}
@@ -64,5 +65,11 @@ namespace BookStore.Controllers
 			string path = "../Images/autumn.jpg";
 			return new ImageResult(path);
 		}
+
+		public ActionResult _Partial()
+		{
+			ViewBag.Message = "Это частичное представление.";
+			return PartialView();
+		} 
 	}
 }

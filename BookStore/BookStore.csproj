@@ -218,6 +218,8 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Buy.cshtml" />
+    <Content Include="Views\Home\_Partial.cshtml" />
+    <Content Include="Views\Home\_Countries.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

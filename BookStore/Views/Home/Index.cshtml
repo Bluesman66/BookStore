@@ -8,16 +8,18 @@
 			<td></td>
 		</tr>
 		@foreach (var b in ViewBag.Books)
-			{
+		{
 			<tr>
 				<td><p>@b.Name</p></td>
 				<td><p>@b.Author</p></td>
 				<td><p>@b.Price</p></td>
 				<td><p>@Html.ActionLink("Купить", "Buy", new { id = b.Id })</p></td>
 			</tr>
-			}
+		}
 	</table>
 </div>
+@Html.Partial("_Partial")
+@{Html.RenderPartial("_Countries", new string[] { "Russia", "USA", "Canada", "France" });}
 @section Footer {
 	Все права защищены. Syte Corp. 2012.
 }
