@@ -39,7 +39,13 @@
 @MyHelpers.HtmlList(new string[] { "Раз", "Два", "Три" })
 
 <h3>Пример класса хелпера</h3>
-@ListHelper.ShowList(Html, new string[] { "Item1", "Item2", "Item3" })
+@Html.ShowList(new string[] { "Item1", "Item2", "Item3" })
+
+<h3>Пример класса хелпера с анонимным объектом аттрибутов</h3>
+@Html.ShowList(new string[] { "Лондон", "Париж", "Берлин" }, new { @class = "btn", id = "citiesList" })
+
+<h3>Image helper</h3>
+@Html.Image("/Images/autumn.jpg", "осень", 100, 200)
 
 @*Секции*@
 @section Footer {

@@ -4,7 +4,7 @@ namespace BookStore.Helpers
 {
 	public static class ListHelper
 	{
-		public static MvcHtmlString ShowList(this HtmlHelper html, string[] items)
+		public static MvcHtmlString ShowList(this HtmlHelper html, string[] items, object htmlAttributes = null)
 		{
 			TagBuilder ul = new TagBuilder("ul");
 			foreach (string item in items)
@@ -13,6 +13,8 @@ namespace BookStore.Helpers
 				li.SetInnerText(item);
 				ul.InnerHtml += li.ToString();
 			}
+			ul.MergeAttributes(HtmlHelper.AnonymousObjectToHtmlAttributes(htmlAttributes));
+
 			return new MvcHtmlString(ul.ToString());
 		}
 	}
