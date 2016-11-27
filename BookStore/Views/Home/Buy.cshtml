@@ -1,18 +1,17 @@
-﻿<div>
+﻿@model BookStore.Models.Purchase
+
+<div>
 	<h3>Форма оформления покупки</h3>
 	@using (Html.BeginForm("Buy", "Home", FormMethod.Post))
 	{			
-		@Html.Hidden("BookId", @ViewBag.BookId as string)
-		<table>
-			<tr>
-				<td><p>Введите свое имя</p></td>
-				<td>@Html.TextBox("Person", "Введите имя")</td>
-			</tr>
-			<tr>
-				<td><p>Введите адрес</p></td>
-				<td>@Html.TextBox("Address", "Введите адрес")</td>
-			</tr>
-			<tr><td><input type="submit" value="Отправить" /></td><td></td></tr>
-		</table>
+		@Html.HiddenFor(m => m.BookId)		
+		@Html.LabelFor(m => m.Person, "Введите имя")
+		<br />
+		@Html.TextBoxFor(m => m.Person)
+		<br /><br />		
+		@Html.LabelFor(m => m.Address, "Введите адрес")
+		<br />
+		@Html.TextBoxFor(m => m.Address)
+		<p><input type="submit" value="Отправить" /></p>		
 	}
 </div>
