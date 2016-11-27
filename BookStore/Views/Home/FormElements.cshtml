@@ -1,0 +1,27 @@
+﻿<table>
+	<tr>
+		<td>
+			@Html.TextArea("text", "привет <br /> мир")
+		</td>
+	</tr>
+	<tr>
+		<td>
+			@Html.TextArea("text", "привет <br /> мир", 5, 50, null)
+		</td>
+	</tr>
+	<tr>
+		<td>
+			@Html.RadioButton("color", "red")
+			<span>красный</span> <br />
+			@Html.RadioButton("color", "blue")
+			<span>синий</span> <br />
+			@Html.RadioButton("color", "green", true)
+			<span>зеленый</span>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			@Html.CheckBox("Enable", false)
+		</td>
+	</tr>
+</table>		

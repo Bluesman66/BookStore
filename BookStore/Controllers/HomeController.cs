@@ -17,8 +17,7 @@ namespace BookStore.Controllers
 			// получаем из бд все объекты Book
 			IEnumerable<Book> books = db.Books;
 			// передаем все объекты в динамическое свойство Books в ViewBag
-			ViewBag.Books = books;
-			ViewBag.Message = "Это вызов частичного представления из обычного.";
+			ViewBag.Books = books;			
 			// возвращаем представление
 			return View();
 		}
@@ -104,6 +103,17 @@ namespace BookStore.Controllers
 				return product + " " + "delete";
 			else
 				return string.Empty;
+		}
+
+		public ActionResult Helpers()
+		{
+			ViewBag.Message = "Это вызов частичного представления из обычного.";
+			return View();
+		}
+
+		public ActionResult FormElements()
+		{
+			return View();
 		}
 	}
 }

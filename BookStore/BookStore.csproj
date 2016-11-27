@@ -225,6 +225,8 @@
     <Content Include="Views\Home\_Countries.cshtml" />
     <Content Include="Views\Home\MultiSelect.cshtml" />
     <Content Include="Views\Home\SubmitButtons.cshtml" />
+    <Content Include="Views\Home\Helpers.cshtml" />
+    <Content Include="Views\Home\FormElements.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

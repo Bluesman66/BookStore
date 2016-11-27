@@ -1,6 +1,4 @@
-﻿@using BookStore.Helpers
-
-<div>
+﻿<div>
 	<h3>Распродажа книг</h3>
 	<table>
 		<tr>
@@ -21,54 +19,6 @@
 	</table>
 </div>
 
-@*Частичные представления*@
-@Html.Partial("_Partial")
-@{Html.RenderPartial("_Countries", new string[] { "Russia", "USA", "Canada", "France" });}
-
-@*Применение HTML хелперов*@
-<h3>Список книг</h3>
-@BookList(ViewBag.Books)
-
-<h3>Города</h3>
-@ShowList(new string[] { "Лондон", "Париж", "Москва" })
-
-<h3>Страны</h3>
-@ShowList(new string[] { "Великобритания", "Франция", "Россия" })
-
-<h3>Пример списка</h3>
-@MyHelpers.HtmlList(new string[] { "Раз", "Два", "Три" })
-
-<h3>Пример класса хелпера</h3>
-@Html.ShowList(new string[] { "Item1", "Item2", "Item3" })
-
-<h3>Пример класса хелпера с анонимным объектом аттрибутов</h3>
-@Html.ShowList(new string[] { "Лондон", "Париж", "Берлин" }, new { @class = "btn", id = "citiesList" })
-
-<h3>Image helper</h3>
-@Html.Image("/Images/autumn.jpg", "осень", 100, 200)
-
-@*Секции*@
 @section Footer {
 	Все права защищены. Syte Corp. 2012.
 }
-
-@*Определение HTML хелперов*@
-@helper BookList(IEnumerable<BookStore.Models.Book> books)
-{
-	<ul>
-		@foreach (BookStore.Models.Book b in books)
-		{
-			<li>@b.Name</li>
-		}
-	</ul>
-}
-
-@helper ShowList(string[] list)
-{ 
-	<ul>
-		@foreach (string item in list)
-		{
-			<li>@item</li>
-		}
-	</ul>
-} 
