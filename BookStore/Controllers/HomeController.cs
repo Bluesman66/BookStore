@@ -12,6 +12,12 @@ namespace BookStore.Controllers
 		// создаем контекст данных
 		BookContext db = new BookContext();
 
+		protected override void Dispose(bool disposing)
+		{
+			db.Dispose();
+			base.Dispose(disposing);
+		}
+
 		public ActionResult Index()
 		{
 			// получаем из бд все объекты Book
