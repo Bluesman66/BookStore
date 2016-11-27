@@ -223,6 +223,8 @@
     <Content Include="Views\Home\Buy.cshtml" />
     <Content Include="Views\Home\_Partial.cshtml" />
     <Content Include="Views\Home\_Countries.cshtml" />
+    <Content Include="Views\Home\MultiSelect.cshtml" />
+    <Content Include="Views\Home\SubmitButtons.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -1,16 +1,44 @@
 ﻿<div>
 	<h3>Форма оформления покупки</h3>
-	@using (Html.BeginForm())
-	{
+	@using (Html.BeginForm("Buy", "Home", FormMethod.Post))
+	{	
+		<table>
+			<tr>
+				<td>
+					@Html.TextArea("text", "привет <br /> мир")
+				</td>
+			</tr>
+			<tr>
+				<td>
+					@Html.TextArea("text", "привет <br /> мир", 5, 50, null)
+				</td>
+			</tr>
+			<tr>
+				<td>
+					@Html.RadioButton("color", "red")
+					<span>красный</span> <br />
+					@Html.RadioButton("color", "blue")
+					<span>синий</span> <br />
+					@Html.RadioButton("color", "green", true)
+					<span>зеленый</span>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					@Html.CheckBox("Enable", false)					
+				</td>
+			</tr>
+		</table>		
+
 		@Html.Hidden("BookId", @ViewBag.BookId as string)
 		<table>
 			<tr>
 				<td><p>Введите свое имя</p></td>
-				<td>@Html.TextBox("Person")</td>
+				<td>@Html.TextBox("Person", "Введите имя")</td>
 			</tr>
 			<tr>
 				<td><p>Введите адрес</p></td>
-				<td>@Html.TextBox("Address")</td>
+				<td>@Html.TextBox("Address", "Введите адрес")</td>
 			</tr>
 			<tr><td><input type="submit" value="Отправить" /></td><td></td></tr>
 		</table>

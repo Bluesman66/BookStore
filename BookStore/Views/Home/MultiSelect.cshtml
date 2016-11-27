@@ -1,0 +1,6 @@
+﻿@using (Html.BeginForm())
+{
+	@Html.ListBox("countries", new MultiSelectList(new string[] { "Россия", "США", "Китай", "Индия" }))
+	<p><input type="submit" value="Отправить" /></p>
+}
+

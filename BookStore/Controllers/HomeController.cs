@@ -2,6 +2,7 @@
 using BookStore.Util;
 using System;
 using System.Collections.Generic;
+using System.Text;
 using System.Web.Mvc;
 
 namespace BookStore.Controllers
@@ -71,5 +72,38 @@ namespace BookStore.Controllers
 			ViewBag.Message = "Это частичное представление.";
 			return PartialView();
 		} 
+
+		[HttpGet]
+		public ActionResult MultiSelect()
+		{
+			return View();
+		}
+
+		[HttpPost]
+		public string MultiSelect(string[] countries)
+		{			
+			StringBuilder sb = new StringBuilder(); 
+			foreach (string country in countries)			
+				sb.Append(country).Append(';');
+
+			return sb.ToString();
+		}
+
+		[HttpGet]
+		public ActionResult SubmitButtons()
+		{
+			return View();
+		}
+
+		[HttpPost]
+		public string SubmitButtons(string product, string action)
+		{
+			if (action == "add")
+				return product + " " + "add";
+			else if (action == "delete")
+				return product + " " + "delete";
+			else
+				return string.Empty;
+		}
 	}
 }
