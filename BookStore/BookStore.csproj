@@ -227,6 +227,7 @@
     <Content Include="Views\Home\SubmitButtons.cshtml" />
     <Content Include="Views\Home\Helpers.cshtml" />
     <Content Include="Views\Home\FormElements.cshtml" />
+    <Content Include="Views\Home\BookView.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

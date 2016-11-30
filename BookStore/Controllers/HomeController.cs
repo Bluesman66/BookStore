@@ -121,5 +121,11 @@ namespace BookStore.Controllers
 		{
 			return View();
 		}
+
+		public ActionResult BookView(int id)
+		{
+			var book = db.Books.Find(id);
+			return View(book);
+		}
 	}
 }
