@@ -1,0 +1,28 @@
+﻿@model BookStore.Models.Book
+
+@{
+    ViewBag.Title = "Удаление книги";
+}
+
+<h2>Удаление книги</h2>
+<dl>
+	<dt>Название</dt>
+	<dd>
+		@Html.DisplayFor(m => m.Name)
+	</dd>
+
+	<dt>Автор</dt>
+	<dd>
+		@Html.DisplayFor(m => m.Author)
+	</dd>
+
+	<dt>Цена</dt>
+	<dd>
+		@Html.DisplayFor(m => m.Price)
+	</dd>
+</dl>
+
+@using (Html.BeginForm())
+{
+	<input type="submit" value="Удалить" />
+}

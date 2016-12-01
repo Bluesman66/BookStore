@@ -1,0 +1,25 @@
+﻿@model BookStore.Models.Book
+
+@{
+    ViewBag.Title = "Новая книга";
+}
+
+<h2>Новая книга</h2>
+
+@using (Html.BeginForm())
+{
+	@Html.LabelFor(m => m.Name, "Название книги")
+	<br />
+	@Html.EditorFor(m => m.Name)
+	<br /><br />
+	@Html.LabelFor(m => m.Author, "Автор")
+	<br />
+	@Html.EditorFor(m => m.Author)
+	<br /><br />
+	@Html.LabelFor(m => m.Price, "Цена")
+	<br />
+	@Html.EditorFor(m => m.Price)
+	<br /><br />
+	<input type="submit" value="Добавить" />
+}
+

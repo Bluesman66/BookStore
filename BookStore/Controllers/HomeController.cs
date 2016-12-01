@@ -150,5 +150,51 @@ namespace BookStore.Controllers
 			db.SaveChanges();
 			return RedirectToAction("Index");
 		}
+
+		[HttpGet]
+		public ActionResult Create()
+		{
+			return View();
+		}
+
+		[HttpPost]
+		public ActionResult Create(Book book)
+		{
+			db.Books.Add(book);
+			db.SaveChanges();
+
+			return RedirectToAction("Index");
+		}
+
+		//public ActionResult Delete(int id)
+		//{
+		//	var b = db.Books.Find(id);
+		//	if (b != default(Book))
+		//	{
+		//		db.Books.Remove(b);
+		//		db.SaveChanges();
+		//	}
+		//	return RedirectToAction("Index");
+		//}
+
+		[HttpGet]
+		public ActionResult Delete(int id)
+		{
+			var b = db.Books.Find(id);
+			if (b == default(Book))			
+				return HttpNotFound();			
+			return View(b);
+		}
+
+		[HttpPost, ActionName("Delete")]
+		public ActionResult DeleteConfirmed(int id)
+		{
+			var b = db.Books.Find(id);
+			if (b == default(Book))			
+				return HttpNotFound();			
+			db.Books.Remove(b);
+			db.SaveChanges();
+			return RedirectToAction("Index");
+		}
 	}
 }
