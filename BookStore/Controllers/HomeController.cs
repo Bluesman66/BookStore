@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Text;
 using System.Web.Mvc;
 
+using System.Data.Entity;
+
 namespace BookStore.Controllers
 {
 	public class HomeController : Controller
@@ -126,6 +128,27 @@ namespace BookStore.Controllers
 		{			
 			var book = db.Books.Find(id);
 			return View(book);			
+		}
+
+		[HttpGet]
+		public ActionResult BookEdit(int? id)
+		{
+			if (id == default(int?))
+				return new HttpNotFoundResult();
+
+			var book = db.Books.Find(id);
+			if (book != null)
+				return View(book);
+
+			return new HttpNotFoundResult();
+		}
+
+		[HttpPost]
+		public ActionResult BookEdit(Book book)
+		{
+			db.Entry(book).State = EntityState.Modified;
+			db.SaveChanges();
+			return RedirectToAction("Index");
 		}
 	}
 }

@@ -228,6 +228,7 @@
     <Content Include="Views\Home\Helpers.cshtml" />
     <Content Include="Views\Home\FormElements.cshtml" />
     <Content Include="Views\Home\BookView.cshtml" />
+    <Content Include="Views\Home\BookEdit.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
