@@ -176,10 +176,6 @@
     <Compile Include="Util\ImageResult.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\Bookstore.mdf" />
-    <Content Include="App_Data\Bookstore_log.ldf">
-      <DependentUpon>Bookstore.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -238,7 +234,9 @@
     <Content Include="Views\Books\Edit.cshtml" />
     <Content Include="Views\Books\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
